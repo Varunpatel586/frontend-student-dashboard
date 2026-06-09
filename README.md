@@ -4,7 +4,7 @@ A premium, highly polished student dashboard built using Next.js 16 (App Router)
 
 ---
 
-## 🏗️ Architectural Choices
+## Architectural Choices
 
 1. **Modern Framework Foundation**
    - Built on **Next.js 16** and **React 19** to take advantage of React Server Components (RSC) and Suspense-driven data streaming.
@@ -19,15 +19,15 @@ A premium, highly polished student dashboard built using Next.js 16 (App Router)
 
 ---
 
-## ⚡ Server vs. Client Component Split
+## Server vs. Client Component Split
 
 To maximize performance, security, and rendering speed, a strict component split is enforced:
 
-### 🖥️ React Server Components (RSC)
+### React Server Components (RSC)
 - **Data Fetching (`CourseListSection.tsx`)**: Database queries reside fully on the server. The database is accessed directly, keeping SQL scripts and access keys secure and out of client bundles.
 - **Incremental Loading (`page.tsx`)**: The dashboard main page structure renders immediately. The course syllabus section is wrapped in a React `<Suspense>` boundary with a custom `CourseGridSkeleton`, streaming in database content asynchronously once resolved.
 
-### 📱 Client Components (`"use client"`)
+### Client Components (`"use client"`)
 - **Collapsible Sidebar (`Sidebar.tsx`)**: Manages navigation states, mobile layouts, and animated tab markers.
 - **Hero & Badge Sizing (`HeroTile.tsx`, `DailyStreakBadge.tsx`)**: Operates reactive mock state counters, flame flickering keyframes, and conic rotation elements.
 - **Momentum Contribution Grid (`ActivityTile.tsx`)**: Tracks grid block hover interactions, populating local state tooltips on cell hover with custom spring transition scale-ups.
@@ -35,7 +35,7 @@ To maximize performance, security, and rendering speed, a strict component split
 
 ---
 
-## 🛠️ Challenges Faced & Solutions
+## Challenges Faced & Solutions
 
 1. **Cumulative Layout Shift (CLS) on Animations**
    - *Challenge*: Initially, animating progress bars and expanding widgets caused the layout to jump, impacting page responsiveness score.
@@ -51,7 +51,7 @@ To maximize performance, security, and rendering speed, a strict component split
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 First, install dependencies:
 ```bash
