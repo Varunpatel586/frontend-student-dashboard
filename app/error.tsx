@@ -20,7 +20,7 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
       {/* Background glowing red spots to simulate alert warning */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-md w-full relative overflow-hidden rounded-3xl border border-red-500/20 bg-card-bg/80 p-8 shadow-2xl backdrop-blur-lg text-center space-y-6">
+      <div className="max-w-md w-full relative overflow-hidden rounded-2xl border border-red-500/20 bg-card-bg/80 p-8 shadow-2xl backdrop-blur-lg text-center space-y-6">
         
         {/* Error icon with double rings and heartbeat pulse */}
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-red-500/10 border border-red-500/20 text-red-500 relative">

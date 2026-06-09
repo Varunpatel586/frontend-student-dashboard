@@ -8,8 +8,8 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 // Check if credentials are present, otherwise fallback to mock data
 const hasCredentials = !!(supabaseUrl && supabaseAnonKey);
 
-export const supabase = hasCredentials 
-  ? createClient(supabaseUrl, supabaseAnonKey) 
+export const supabase = hasCredentials
+  ? createClient(supabaseUrl, supabaseAnonKey)
   : null;
 
 // Toggle this boolean to true to force-test the error boundary state manually
@@ -45,7 +45,7 @@ export async function fetchCourses(): Promise<Course[]> {
         console.warn("Supabase table 'courses' does not exist. Falling back to mock data.");
         return getMockCourses();
       }
-      
+
       console.error("Supabase query error:", error);
       throw new Error(`Failed to query courses table: ${error.message}`);
     }

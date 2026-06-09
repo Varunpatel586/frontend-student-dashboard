@@ -15,7 +15,7 @@ export default function Loading() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Hero Tile Skeleton */}
-          <section className="relative overflow-hidden rounded-3xl border border-card-border bg-card-bg/60 p-6 md:p-8 h-60 flex flex-col justify-between animate-pulse md:col-span-2">
+          <section className="relative overflow-hidden rounded-2xl border border-card-border bg-card-bg/60 p-6 md:p-8 h-60 flex flex-col justify-between animate-pulse md:col-span-2">
             <div className="space-y-4">
               <div className="h-4 w-24 bg-zinc-800 rounded-md" />
               <div className="h-10 w-2/3 bg-zinc-800 rounded-md" />
@@ -25,7 +25,7 @@ export default function Loading() {
           </section>
 
           {/* Activity Tile Skeleton */}
-          <article className="relative overflow-hidden rounded-3xl border border-card-border bg-card-bg/60 p-6 h-60 flex flex-col justify-between animate-pulse md:col-span-2 lg:col-span-1">
+          <article className="relative overflow-hidden rounded-2xl border border-card-border bg-card-bg/60 p-6 h-60 flex flex-col justify-between animate-pulse md:col-span-2 lg:col-span-1">
             <div className="space-y-2">
               <div className="h-5 w-40 bg-zinc-800 rounded-md" />
               <div className="h-3.5 w-24 bg-zinc-800 rounded-md" />
