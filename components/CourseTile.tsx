@@ -28,13 +28,13 @@ export default function CourseTile({ course }: CourseTileProps) {
         scale: 1.01,
         y: -2,
         borderColor: "rgba(255, 255, 255, 0.12)",
-        boxShadow: "0 0 30px -5px rgba(120, 119, 198, 0.15)"
+        boxShadow: "0 20px 48px -10px rgba(255, 255, 255, 0.15)"
       }}
       transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className="relative overflow-hidden rounded-3xl border border-white/[0.3] bg-white/[0.02] backdrop-blur-xl p-7 flex flex-col justify-between h-64 shadow-lg cursor-pointer select-none group"
+      className={`relative overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.02] p-7 flex flex-col justify-between h-64 shadow-[0_12px_30px_-10px_rgba(255,255,255,0.08)] cursor-pointer select-none group transition-all duration-300`}
     >
       {/* 1. SUBTLE RADIAL GRADIENT MASK FOR LOCALIZED LIGHT SOURCE */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(99,102,241,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.03)_0%,transparent_70%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(6,182,212,0.04)_0%,transparent_60%)] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Ambient background glows */}
@@ -48,12 +48,12 @@ export default function CourseTile({ course }: CourseTileProps) {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute -top-16 -left-16 w-32 h-32 bg-accent-indigo/5 border-white/[0.2] rounded-full blur-2xl pointer-events-none"
+        className="absolute -top-16 -left-16 w-32 h-32 bg-accent-blue/5 border-white/[0.2] rounded-full blur-2xl pointer-events-none"
       />
 
       {/* Course Icon and Header */}
       <div className="flex justify-between items-start relative z-10">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/60 group-hover:text-accent-indigo group-hover:border-accent-indigo/30 group-hover:shadow-[0_0_12px_rgba(99,102,241,0.2)] transition-all duration-300">
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/60 group-hover:text-accent-blue group-hover:border-accent-blue/30 group-hover:shadow-[0_0_12px_rgba(59,130,246,0.2)] transition-all duration-300">
           <IconComponent className="h-5 w-5 transition-transform duration-300 group-hover:scale-105" />
         </div>
         <div className="flex items-center gap-1 text-[9px] font-bold text-white/40 uppercase tracking-widest bg-white/5 px-2.5 py-1 rounded-lg border border-white/[0.02]">
@@ -75,7 +75,7 @@ export default function CourseTile({ course }: CourseTileProps) {
       <div className="space-y-2.5 relative z-10 w-full">
         <div className="flex justify-between text-xs tracking-tight">
           <span className="text-white/40 font-medium">Syllabus Completed</span>
-          <span className="font-semibold text-accent-indigo group-hover:text-accent-cyan transition-colors duration-300">
+          <span className="font-semibold text-accent-blue group-hover:text-accent-cyan transition-colors duration-300">
             {course.progress}%
           </span>
         </div>
@@ -88,7 +88,7 @@ export default function CourseTile({ course }: CourseTileProps) {
             animate={{ scaleX: course.progress / 100 }}
             transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
             style={{ originX: 0 }}
-            className="h-full bg-gradient-to-r from-accent-indigo to-accent-cyan shadow-[0_0_10px_rgba(99,102,241,0.5)] rounded-full"
+            className="h-full bg-gradient-to-r from-accent-blue to-accent-cyan shadow-[0_0_10px_rgba(6,182,212,0.4)] rounded-full"
           />
         </div>
 

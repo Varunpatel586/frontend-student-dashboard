@@ -50,15 +50,15 @@ export default function Home() {
                 <input
                   type="text"
                   placeholder="Search modules, files..."
-                  className="h-9 w-60 rounded-xl bg-white/5 border border-white/10 pl-9 pr-4 text-xs text-white/80 placeholder-white/30 focus:border-accent-indigo/30 focus:outline-none transition-colors"
+                  className="h-9 w-60 rounded-xl bg-white/[0.02] border border-white/[0.06] pl-9 pr-4 text-xs text-white/80 placeholder-white/30 focus:border-accent-blue/30 focus:outline-none transition-colors"
                 // disabled
                 />
               </div>
 
               {/* Notification icon mock */}
-              <button className="h-9 w-9 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/40 hover:text-white/70 hover:border-white/20 transition-all relative cursor-not-allowed">
+              <button className="h-9 w-9 flex items-center justify-center rounded-xl bg-white/[0.02] border border-white/[0.06] text-white/40 hover:text-white/70 hover:border-white/15 transition-all relative cursor-not-allowed">
                 <Bell className="h-4 w-4" />
-                <span className="absolute top-2.5 right-2.5 h-1.5 w-1.5 rounded-full bg-accent-indigo shadow-[0_0_8px_rgba(99,102,241,0.5)]" />
+                <span className="absolute top-2.5 right-2.5 h-1.5 w-1.5 rounded-full bg-accent-blue shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
               </button>
             </div>
           </header>
@@ -79,7 +79,7 @@ export default function Home() {
             {/* Section Divider - Course Enrollments Title */}
             <div className="col-span-1 md:col-span-2 lg:col-span-3 pt-4 flex items-center justify-between border-t border-white/[0.04]">
               <div className="flex items-center gap-2">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-indigo/10 border border-accent-indigo/20 text-accent-indigo">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-blue/10 border border-accent-blue/20 text-accent-blue">
                   <Sparkles className="h-4 w-4" />
                 </div>
                 <h2 className="text-lg font-bold text-white/90 tracking-tight">

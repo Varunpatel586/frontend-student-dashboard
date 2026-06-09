@@ -9,8 +9,8 @@ interface DailyStreakBadgeProps {
 
 export default function DailyStreakBadge({ streakDays }: DailyStreakBadgeProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl p-[1px] shadow-[0_0_20px_rgba(249,115,22,0.15)] flex items-center justify-center min-w-[155px] flex-1 lg:flex-none">
-      
+    <div className="relative overflow-hidden rounded-2xl p-[1px] shadow-[0_0_20px_rgba(249,115,22,0.15)] flex items-center justify-center flex-1">
+
       {/* 1. INFINITELY ROTATING CONIC-GRADIENT FOR BORDER GLOW */}
       <motion.div
         animate={{ rotate: 360 }}
@@ -25,9 +25,9 @@ export default function DailyStreakBadge({ streakDays }: DailyStreakBadgeProps) 
         className="absolute w-[200%] h-[200%] top-[-50%] left-[-50%] pointer-events-none z-0"
       />
 
-      {/* 2. INNER GLASS CARD CONTAINER */}
-      <div className="relative z-10 flex items-center gap-4 bg-black/70 backdrop-blur-xl border border-white/5 rounded-[15px] p-4 w-full h-full shadow-[inset_0_0_12px_rgba(245,158,11,0.15),0_0_15px_rgba(245,158,11,0.3)] hover:bg-black/55 transition-colors duration-300">
-        
+      {/* 2. INNER CARD CONTAINER (solid bg, no glass blur) */}
+      <div className="relative z-10 flex items-center gap-4 bg-[#0c0c0e] border border-white/[0.06] rounded-[15px] p-4 w-full h-full shadow-[inset_0_0_12px_rgba(245,158,11,0.05),0_4px_20px_rgba(0,0,0,0.15)] hover:bg-[#111114] transition-colors duration-300">
+
         {/* Animated Flickering Flame Icon container */}
         <motion.div
           animate={{
@@ -55,7 +55,7 @@ export default function DailyStreakBadge({ streakDays }: DailyStreakBadgeProps) 
           </span>
         </div>
       </div>
-      
+
     </div>
   );
 }

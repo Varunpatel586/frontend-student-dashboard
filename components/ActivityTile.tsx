@@ -73,7 +73,7 @@ export default function ActivityTile() {
   };
 
   return (
-    <article className="relative overflow-hidden rounded-3xl border border-white/[0.3] bg-white/[0.02] backdrop-blur-xl p-8 shadow-2xl flex flex-col justify-between h-full min-h-[300px]">
+    <article className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-white/[0.02] p-8 shadow-[0_24px_60px_-16px_rgba(255,255,255,0.1)] flex flex-col justify-between h-full min-h-[300px] transition-shadow duration-500 hover:shadow-[0_32px_80px_-16px_rgba(255,255,255,0.16)]">
 
       {/* Background radial gradient mesh */}
       <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-emerald-500/5 rounded-full blur-[60px] pointer-events-none" />
@@ -89,7 +89,7 @@ export default function ActivityTile() {
         </div>
 
         <div className="flex gap-2">
-          <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold text-white/70 shadow-sm">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/[0.02] border border-white/[0.06] rounded-xl text-[10px] font-bold text-white/70 shadow-sm">
             <Award className="h-3.5 w-3.5 text-accent-amber" />
             <span>Top 10% Weekly</span>
           </div>
@@ -121,7 +121,7 @@ export default function ActivityTile() {
             <motion.p
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[11px] font-medium text-white/80 bg-white/5 border border-white/10 backdrop-blur-md px-3.5 py-1 rounded-full inline-block shadow-lg"
+              className="text-[11px] font-medium text-white/80 bg-[#0c0c0e] border border-white/[0.08] px-3.5 py-1 rounded-full inline-block shadow-[0_4px_16px_rgba(0,0,0,0.3)]"
             >
               {hoveredCell.hours > 0 ? (
                 <>
@@ -141,7 +141,7 @@ export default function ActivityTile() {
       </div>
 
       {/* Legend & Summary Info */}
-      <div className="flex items-end justify-between border-t border-white/[0.05] pt-4 mt-4 relative z-10">
+      <div className="flex items-end justify-between border-t border-white/[0.05] pt-2 mt-2 relative z-10">
         {/* Stats Row */}
         <div className="flex items-center gap-6">
           <div className="flex flex-col gap-0.5">

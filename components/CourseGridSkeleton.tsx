@@ -4,7 +4,7 @@ export default function CourseGridSkeleton() {
       {Array.from({ length: 3 }).map((_, idx) => (
         <article
           key={idx}
-          className="relative overflow-hidden rounded-3xl border border-card-border bg-card-bg/60 p-6 h-64 flex flex-col justify-between animate-pulse"
+          className="relative overflow-hidden rounded-2xl border border-card-border bg-card-bg/60 p-6 h-64 flex flex-col justify-between animate-pulse"
         >
           {/* Header */}
           <div className="flex justify-between items-start">

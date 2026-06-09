@@ -66,19 +66,19 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
 }
 
-/* Radial light source overlay to simulate ambient depth with Indigo/Violet glow */
+/* Radial light source overlay to simulate ambient depth with Blue/Cyan glow */
 .bg-ambient-radial {
-  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.04) 0%, rgba(139, 92, 246, 0.02) 40%, transparent 80%);
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, rgba(6, 182, 212, 0.02) 40%, transparent 80%);
 }
 
-/* Subtle holographic glowing border card effect */
+/* White underglow card effect — replaces glassmorphism */
 .soft-glow-card {
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .soft-glow-card:hover {
-  box-shadow: 0 0 30px -5px rgba(120, 119, 198, 0.15);
-  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 40px -8px rgba(255, 255, 255, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Custom scrollbars for dashboard context */

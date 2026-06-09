@@ -21,8 +21,6 @@ const FORCE_SIMULATE_DB_ERROR = false;
  * or triggers Next.js error boundaries.
  */
 export async function fetchCourses(): Promise<Course[]> {
-  // Simulate network latency (e.g. 1.2 seconds) to display the loading skeleton animations
-  await new Promise((resolve) => setTimeout(resolve, 1200));
 
   if (FORCE_SIMULATE_DB_ERROR) {
     throw new Error("Failed to establish a connection to the Supabase database. (SQLSTATE 08006)");
