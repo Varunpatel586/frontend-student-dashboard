@@ -99,3 +99,17 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* Mobile Portal Fixed Stacking Context */
+#mobile-nav-portal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  pointer-events: none; /* let clicks pass through the wrapper */
+}
+
+#mobile-nav-portal > * {
+  pointer-events: auto; /* re-enable on actual nav */
+}

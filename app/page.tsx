@@ -32,8 +32,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto p-4 md:p-6 lg:p-8 space-y-6">
 
           {/* Header section (Title, search mock, notification badge) */}
-          <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.04] pb-5 select-none">
-            <div className="space-y-1">
+          <header className="flex flex-row items-center justify-between gap-4 border-b border-white/[0.04] pb-5 select-none">
+            <div className="space-y-1 hidden sm:block">
               <span className="text-xs text-white/40 font-bold uppercase tracking-widest">
                 Student Workspace
               </span>
@@ -43,20 +43,20 @@ export default function Home() {
             </div>
 
             {/* Mock Header Controls */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-1 sm:flex-none">
               {/* Search input mock */}
-              <div className="relative hidden sm:block">
+              <div className="relative flex-1 sm:flex-none">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/30" />
                 <input
                   type="text"
                   placeholder="Search modules, files..."
-                  className="h-9 w-60 rounded-xl bg-white/[0.02] border border-white/[0.06] pl-9 pr-4 text-xs text-white/80 placeholder-white/30 focus:border-accent-blue/30 focus:outline-none transition-colors"
+                  className="h-9 w-full sm:w-60 rounded-xl bg-white/[0.02] border border-white/[0.06] pl-9 pr-4 text-xs text-white/80 placeholder-white/30 focus:border-accent-blue/30 focus:outline-none transition-colors"
                 // disabled
                 />
               </div>
 
               {/* Notification icon mock */}
-              <button className="h-9 w-9 flex items-center justify-center rounded-xl bg-white/[0.02] border border-white/[0.06] text-white/40 hover:text-white/70 hover:border-white/15 transition-all relative cursor-not-allowed">
+              <button className="h-9 w-9 flex items-center justify-center rounded-xl bg-white/[0.02] border border-white/[0.06] text-white/40 hover:text-white/70 hover:border-white/15 transition-all relative cursor-not-allowed shrink-0">
                 <Bell className="h-4 w-4" />
                 <span className="absolute top-2.5 right-2.5 h-1.5 w-1.5 rounded-full bg-accent-blue shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
               </button>

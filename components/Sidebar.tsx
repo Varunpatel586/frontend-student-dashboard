@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { 
   LayoutDashboard, 
@@ -22,6 +23,11 @@ const NAV_ITEMS = [
 
 export default function Sidebar() {
   const [activeTab, setActiveTab] = useState("dashboard");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
@@ -103,38 +109,43 @@ export default function Sidebar() {
         </div>
       </aside>
 
-      {/* MOBILE BOTTOM NAVIGATION BAR */}
-      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 h-16 bg-[#0a0a0c]/85 backdrop-blur-xl border-t border-white/[0.05] z-40 items-center justify-around px-4 pb-safe select-none">
-        {NAV_ITEMS.map((item) => {
-          const Icon = item.icon;
-          const isActive = activeTab === item.id;
+      {/* MOBILE BOTTOM NAVIGATION BAR (rendered via Portal to dedicated fixed wrapper div) */}
+      {mounted && typeof document !== "undefined"
+        ? createPortal(
+            <nav className="flex md:hidden h-16 bg-[#0a0a0c] border-t border-white/[0.05] items-center justify-around px-4 pb-[env(safe-area-inset-bottom,0px)] select-none">
+              {NAV_ITEMS.map((item) => {
+                const Icon = item.icon;
+                const isActive = activeTab === item.id;
 
-          return (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`relative flex flex-col items-center justify-center flex-1 h-full py-1 text-xs font-medium outline-none cursor-pointer ${
-                isActive ? "text-accent-blue" : "text-white/40 hover:text-white/70"
-              }`}
-            >
-              {/* Active Mobile Highlight Pill */}
-              {isActive && (
-                <motion.div
-                  layoutId="mobile-active-pill"
-                  className="absolute bottom-1.5 h-1 w-8 rounded-full bg-accent-blue"
-                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                />
-              )}
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveTab(item.id)}
+                    className={`relative flex flex-col items-center justify-center flex-1 h-full py-1 text-xs font-medium outline-none cursor-pointer ${
+                      isActive ? "text-accent-blue" : "text-white/40 hover:text-white/70"
+                    }`}
+                  >
+                    {/* Active Mobile Highlight Pill */}
+                    {isActive && (
+                      <motion.div
+                        layoutId="mobile-active-pill"
+                        className="absolute bottom-1.5 h-1 w-8 rounded-full bg-accent-blue"
+                        transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                      />
+                    )}
 
-              <Icon className={`h-5 w-5 mb-1 transition-transform duration-200 ${
-                isActive ? "scale-105 text-accent-blue" : ""
-              }`} />
-              
-              <span className="text-[10px] tracking-tight">{item.label}</span>
-            </button>
-          );
-        })}
-      </nav>
+                    <Icon className={`h-5 w-5 mb-1 transition-transform duration-200 ${
+                      isActive ? "scale-105 text-accent-blue" : ""
+                    }`} />
+                    
+                    <span className="text-[10px] tracking-tight">{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>,
+            document.getElementById("mobile-nav-portal") ?? document.body
+          )
+        : null}
     </>
   );
 }
