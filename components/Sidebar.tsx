@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-import { 
-  LayoutDashboard, 
-  BookOpen, 
-  BarChart3, 
-  Calendar, 
-  User, 
+import {
+  LayoutDashboard,
+  BookOpen,
+  BarChart3,
+  Calendar,
+  User,
   GraduationCap,
   ChevronRight
 } from "lucide-react";
@@ -33,7 +33,7 @@ export default function Sidebar() {
     <>
       {/* DESKTOP & TABLET SIDEBAR LAYOUT */}
       <aside className="hidden md:flex flex-col fixed left-0 top-0 h-screen bg-transparent border-r border-white/[0.04] z-40 transition-all duration-300 w-20 lg:w-64 py-8 select-none">
-        
+
         {/* LOGO SECTION */}
         <div className="flex items-center gap-3 px-6 mb-10 text-white">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-accent-blue via-accent-cyan to-accent-blue text-white shadow-[0_0_20px_rgba(59,130,246,0.25)]">
@@ -54,9 +54,8 @@ export default function Sidebar() {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`w-full relative flex items-center gap-4 py-3 px-4 rounded-xl text-sm font-medium transition-colors duration-200 group outline-none cursor-pointer ${
-                  isActive ? "text-accent-blue" : "text-white/50 hover:text-white/80"
-                }`}
+                className={`w-full relative flex items-center gap-4 py-3 px-4 rounded-xl text-sm font-medium transition-colors duration-200 group outline-none cursor-pointer ${isActive ? "text-accent-blue" : "text-white/50 hover:text-white/80"
+                  }`}
               >
                 {/* Active Highlight Background Pill - Soft Gradient from Left to Right */}
                 {isActive && (
@@ -71,10 +70,9 @@ export default function Sidebar() {
                 )}
 
                 <div className="relative flex items-center justify-center">
-                  <Icon className={`h-5 w-5 transition-transform duration-200 ${
-                    isActive ? "scale-105 text-accent-blue" : "group-hover:scale-105"
-                  }`} />
-                  
+                  <Icon className={`h-5 w-5 transition-transform duration-200 ${isActive ? "scale-105 text-accent-blue" : "group-hover:scale-105"
+                    }`} />
+
                   {/* Subtle Glowing active point */}
                   {isActive && (
                     <span className="absolute -top-1 -right-1 flex h-1.5 w-1.5">
@@ -98,10 +96,10 @@ export default function Sidebar() {
             </div>
             <div className="hidden lg:flex flex-col flex-1 min-w-0">
               <span className="text-sm font-semibold text-white/80 truncate group-hover:text-white transition-colors tracking-tight">
-                Varun Sharma
+                Varun Patel
               </span>
               <span className="text-xs text-white/40 truncate">
-                varun@aetheris.edu
+                varun.jatin.patel@gmail.com
               </span>
             </div>
             <ChevronRight className="hidden lg:block h-4 w-4 text-white/30 group-hover:text-white/60 transition-colors" />
@@ -112,39 +110,37 @@ export default function Sidebar() {
       {/* MOBILE BOTTOM NAVIGATION BAR (rendered via Portal to dedicated fixed wrapper div) */}
       {mounted && typeof document !== "undefined"
         ? createPortal(
-            <nav className="flex md:hidden h-16 bg-[#0a0a0c] border-t border-white/[0.05] items-center justify-around px-4 pb-[env(safe-area-inset-bottom,0px)] select-none">
-              {NAV_ITEMS.map((item) => {
-                const Icon = item.icon;
-                const isActive = activeTab === item.id;
+          <nav className="flex md:hidden h-16 bg-[#0a0a0c] border-t border-white/[0.05] items-center justify-around px-4 pb-[env(safe-area-inset-bottom,0px)] select-none">
+            {NAV_ITEMS.map((item) => {
+              const Icon = item.icon;
+              const isActive = activeTab === item.id;
 
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => setActiveTab(item.id)}
-                    className={`relative flex flex-col items-center justify-center flex-1 h-full py-1 text-xs font-medium outline-none cursor-pointer ${
-                      isActive ? "text-accent-blue" : "text-white/40 hover:text-white/70"
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveTab(item.id)}
+                  className={`relative flex flex-col items-center justify-center flex-1 h-full py-1 text-xs font-medium outline-none cursor-pointer ${isActive ? "text-accent-blue" : "text-white/40 hover:text-white/70"
                     }`}
-                  >
-                    {/* Active Mobile Highlight Pill */}
-                    {isActive && (
-                      <motion.div
-                        layoutId="mobile-active-pill"
-                        className="absolute bottom-1.5 h-1 w-8 rounded-full bg-accent-blue"
-                        transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                      />
-                    )}
+                >
+                  {/* Active Mobile Highlight Pill */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="mobile-active-pill"
+                      className="absolute bottom-1.5 h-1 w-8 rounded-full bg-accent-blue"
+                      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                    />
+                  )}
 
-                    <Icon className={`h-5 w-5 mb-1 transition-transform duration-200 ${
-                      isActive ? "scale-105 text-accent-blue" : ""
+                  <Icon className={`h-5 w-5 mb-1 transition-transform duration-200 ${isActive ? "scale-105 text-accent-blue" : ""
                     }`} />
-                    
-                    <span className="text-[10px] tracking-tight">{item.label}</span>
-                  </button>
-                );
-              })}
-            </nav>,
-            document.getElementById("mobile-nav-portal") ?? document.body
-          )
+
+                  <span className="text-[10px] tracking-tight">{item.label}</span>
+                </button>
+              );
+            })}
+          </nav>,
+          document.getElementById("mobile-nav-portal") ?? document.body
+        )
         : null}
     </>
   );
